@@ -1,0 +1,11 @@
+@use '../utilities' as *;
+
+.header {
+  height: toRem(520);
+  background-image: url('../../assets/images/header-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: toRem(25);
+  box-shadow: inset 0 0 15rem rgb(0, 0, 0);
+}

@@ -1,0 +1,26 @@
+@use '../utilities' as *;
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-regular);
+  background-color: var(--clr-neutral-300);
+}
+
+.container {
+  max-width: toRem(1170);
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--clr-neutral-300);
+  font-size: var(--fs-500);
+  font-family: var(--font-bold);
+  letter-spacing: 1px;
+
+  &-link {
+    text-decoration: none;
+  }
+}

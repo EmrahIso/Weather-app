@@ -1,0 +1,24 @@
+// Type-scale for large and small screens
+
+$type-scale: (
+  small: (
+    100: 0.8rem,
+    // 12.8px
+    200: 0.9rem,
+    // 14.4px
+    300: 1rem,
+    // 16px
+    400: 1.1875rem,
+    // 19px
+    500: 1.75rem,
+    // 28px
+    600: 2.25rem,
+    // 36px
+    700: 3rem,
+    // 48px
+    800: 4rem,
+    // 64px
+    900: 5rem,
+    // 80px
+  ),
+);

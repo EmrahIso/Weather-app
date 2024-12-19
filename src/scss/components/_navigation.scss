@@ -1,0 +1,42 @@
+@use '../utilities' as *;
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    &:link,
+    &:visited {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      &-icon {
+        fill: var(--clr-neutral-200);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2.5px;
+      display: inline-block;
+      left: -20px;
+      height: 120%;
+      width: 1px;
+      background-color: #888;
+      pointer-events: none;
+    }
+
+    &-icon {
+      height: toRem(32);
+      width: toRem(32);
+      fill: var(--clr-neutral-400);
+      transition: 0.2s;
+    }
+  }
+}
