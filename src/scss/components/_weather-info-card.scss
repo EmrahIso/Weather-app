@@ -1,0 +1,124 @@
+@use '../utilities/' as *;
+
+.article-weather-information {
+  display: grid;
+  gap: toRem(24);
+  grid-template-columns: repeat(5, 1fr);
+
+  & > div:not(:last-child) {
+    padding-right: toRem(24);
+    border-right: 1px solid var(--clr-neutral-400);
+  }
+
+  &__image {
+    height: toRem(160);
+    width: toRem(160);
+    //filter: drop-shadow(0rem 0rem 7rem rgb(0, 0, 0, 0.6));
+
+    &-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__details-heading {
+    font-size: var(--fs-100);
+    text-transform: uppercase;
+    font-family: var(--font-bold);
+    letter-spacing: 0.5px;
+    color: var(--clr-neutral-500);
+    margin-bottom: toRem(8);
+  }
+
+  &__subheading {
+    color: var(--clr-neutral-500);
+    line-height: 1.2;
+
+    & + span {
+      color: var(--clr-neutral-600);
+      font-family: var(--font-bold);
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: toRem(20);
+
+    &-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: toRem(24);
+
+      &--tt {
+        justify-content: start;
+        padding-top: toRem(24);
+        gap: toRem(8);
+
+        p,
+        span {
+          color: var(--clr-neutral-500);
+          font-size: var(--fs-100);
+          font-family: var(--font-regular);
+          font-weight: 600;
+          line-height: 1.2;
+        }
+
+        h5 {
+          color: var(--clr-neutral-600);
+          font-size: var(--fs-400);
+          padding-top: toRem(12);
+          margin-bottom: toRem(20);
+        }
+      }
+    }
+
+    & div:last-child {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(4);
+    }
+  }
+
+  & .temperature {
+    font-size: var(--fs-700);
+    font-family: var(--font-bold);
+    color: var(--clr-neutral-600);
+
+    & + span {
+      display: inline-block;
+      font-size: var(--fs-700);
+      font-family: var(--font-bold);
+      color: var(--clr-neutral-600);
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      gap: toRem(16);
+      font-size: var(--fs-200);
+
+      & > div {
+        display: flex;
+        align-items: center;
+
+        & span:first-child {
+          margin-right: toRem(8);
+          display: flex;
+          align-items: center;
+        }
+
+        & span {
+          display: inline-block;
+        }
+      }
+    }
+
+    &-icon {
+      height: toRem(20);
+      width: toRem(20);
+    }
+  }
+}

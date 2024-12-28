@@ -19,6 +19,7 @@
 
   &__content-box {
     display: flex;
+    position: relative;
   }
 
   &__input {
@@ -44,6 +45,21 @@
       font-size: var(--fs-300);
       letter-spacing: 0.25px;
       color: var(--clr-neutral-500);
+    }
+
+    & + span {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      font-size: var(--fs-200);
+      color: #f43f5e;
+      display: flex;
+      justify-content: center;
+      transition: all 0.3s;
+      opacity: 0;
+      gap: toRem(6);
+      width: 100%;
     }
   }
 

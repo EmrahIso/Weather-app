@@ -1,0 +1,54 @@
+@use '../utilities/' as *;
+
+.footer {
+  margin-top: toRem(60);
+  margin-bottom: toRem(30);
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    gap: toRem(20);
+  }
+
+  &__box-item:not(:last-child) {
+    padding-right: toRem(20);
+    border-right: 1px solid var(--clr-neutral-400);
+  }
+
+  &__box-item {
+    font-size: var(--fs-200);
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+    color: var(--clr-neutral-500);
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: currentColor;
+    display: flex;
+    align-items: center;
+    gap: toRem(6);
+    font-family: var(--font-bold);
+    transition: all 0.2s;
+  }
+
+  &__link-icon {
+    height: toRem(32);
+    width: toRem(32);
+    fill: var(--clr-neutral-500);
+    transition: 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: var(--clr-neutral-600);
+    text-decoration: underline;
+  }
+
+  &__link:hover &__link-icon,
+  &__link:active &__link-icon {
+    fill: var(--clr-neutral-600);
+  }
+}
