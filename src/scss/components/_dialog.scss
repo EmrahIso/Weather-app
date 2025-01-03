@@ -1,0 +1,95 @@
+@use '../utilities/' as *;
+
+.dialog {
+  position: absolute;
+  top: toRem(24);
+  left: 50%;
+  width: toRem(520);
+  border: 2px solid transparent;
+  border-radius: toRem(12);
+  padding: toRem(12) toRem(16);
+  box-shadow: var(--shw-dark-bottom);
+  transition: all 0.75s;
+
+  transform: translate(-50%, -150%);
+  opacity: 0;
+
+  &::backdrop {
+    z-index: -1;
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  &__box {
+    &:not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__heading {
+    font-family: var(--font-bold);
+    font-size: var(--fs-300);
+    color: var(--clr-neutral-600);
+    line-height: 1.2;
+  }
+
+  &__close-btn {
+    border: 0;
+    padding: toRem(4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background-color: var(--clr-org-400);
+    }
+
+    svg {
+      transition: all 0.2s;
+    }
+
+    &:hover svg,
+    &:active svg {
+      color: var(--clr-neutral-100);
+    }
+  }
+
+  &__reload-btn {
+    display: inline-block;
+    padding: toRem(6) toRem(12);
+    margin-left: auto;
+    font-size: var(--fs-200);
+    background-color: var(--clr-cyn-400);
+    color: var(--clr-neutral-100);
+    border: 0;
+    border-radius: toRem(50);
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      background-color: var(--clr-org-400);
+    }
+  }
+
+  &__desc {
+    font-size: var(--fs-200);
+    color: var(--clr-neutral-500);
+    line-height: 1.15;
+  }
+}
