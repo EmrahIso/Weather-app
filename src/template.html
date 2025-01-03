@@ -24,6 +24,8 @@
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="navigation__link-icon"
+                height="32"
+                width="32"
                 viewBox="0 0 512 512"
               >
                 <path
@@ -48,11 +50,6 @@
               required
               placeholder="Search for any city and get weather information"
             />
-            <span
-              ><span>>>></span>
-              <p>You must enter an City Name</p>
-              <span><<<</span>
-            </span>
             <button
               type="submit"
               class="form__button"
@@ -84,6 +81,43 @@
           </div>
         </form>
       </div>
+      <dialog class="dialog" data-weather-error-dialog>
+        <div class="dialog__box">
+          <h2 class="dialog__heading">Whoops! Something went wrong</h2>
+          <button class="dialog__close-btn" data-weather-error-dialog-close-btn>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              height="24"
+              width="24"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M368 368L144 144M368 144L144 368"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="dialog__box">
+          <p class="dialog__desc" data-weather-error-dialog-description>
+            The city that you are trying to search info for isn't registered in
+            our API database. Try reloading the page and try again.
+          </p>
+        </div>
+        <div class="dialog__box">
+          <button
+            class="dialog__reload-btn"
+            data-weather-error-dialog-reload-btn
+          >
+            Reload
+          </button>
+        </div>
+      </dialog>
     </header>
     <main>
       <div class="container">
@@ -105,8 +139,9 @@
               </h4>
               <div class="templerature__box">
                 <div>
-                  <span class="temperature" data-info="temp">20.7</span>
+                  <span class="temperature" data-info="temp"></span>
                   <span>&deg;</span>
+                  <span data-info="unit"></span>
                 </div>
               </div>
               <div class="temperature__box">
@@ -128,8 +163,9 @@
                     </svg>
                     Min:
                   </span>
-                  <span data-info="temp-min">14.7</span>
+                  <span data-info="temp-min"></span>
                   <span>&deg;</span>
+                  <span data-info="unit"></span>
                 </div>
                 <div>
                   <span>
@@ -149,8 +185,9 @@
                     </svg>
                     Max:
                   </span>
-                  <span data-info="temp-max">24.1</span>
+                  <span data-info="temp-max"></span>
                   <span>&deg;</span>
+                  <span data-info="unit"></span>
                 </div>
               </div>
             </div>
@@ -161,15 +198,15 @@
                 Timezone:
               </h4>
               <div>
-                <h5 data-info="timezone">Europe / London</h5>
+                <h5 data-info="timezone"></h5>
               </div>
               <div>
                 <p data-info="datetime">
-                  <span>2023</span>
-                  <span>/</span>
-                  <span>05</span>
-                  <span>/</span>
-                  <span>02</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </p>
               </div>
             </div>
@@ -190,7 +227,7 @@
                   <h5 class="article-weather-information__subheading">
                     Sunrise
                   </h5>
-                  <span data-info="sunrise">05:31:11</span>
+                  <span data-info="sunrise"></span>
                 </div>
               </div>
               <div class="article-weather-information__box">
@@ -209,7 +246,7 @@
                   <h5 class="article-weather-information__subheading">
                     Sunset
                   </h5>
-                  <span data-info="sunset">20:25:02</span>
+                  <span data-info="sunset"></span>
                 </div>
               </div>
             </div>
@@ -230,7 +267,7 @@
                   <h5 class="article-weather-information__subheading">
                     Humidity
                   </h5>
-                  <span data-info="humidity">70%</span>
+                  <span data-info="humidity"></span>
                 </div>
               </div>
               <div class="article-weather-information__box">
@@ -249,7 +286,7 @@
                   <h5 class="article-weather-information__subheading">
                     UV Index
                   </h5>
-                  <span data-info="uv-index">0.1</span>
+                  <span data-info="uv-index"></span>
                 </div>
               </div>
             </div>
@@ -257,11 +294,8 @@
           <article class="article-overview">
             <div>
               <div class="welcome-cont">
-                <h3 data-info="address">London, England, United Kingdom</h3>
-                <p data-info="description">
-                  Similar temperatures continuing with a chance of rain Friday,
-                  Monday & Tuesday.
-                </p>
+                <h3 data-info="address"></h3>
+                <p data-info="description"></p>
               </div>
             </div>
             <div>
@@ -274,7 +308,7 @@
                     <input
                       type="radio"
                       name="value-type"
-                      value="imperial"
+                      value="us"
                       id="input-radio-fahrenheit"
                     />
                     <label for="input-radio-fahrenheit"
@@ -287,7 +321,6 @@
                       name="value-type"
                       value="metric"
                       id="input-radio-celsius"
-                      checked
                     />
                     <label for="input-radio-celsius">Metric ( &deg;C )</label>
                   </li>
@@ -323,6 +356,8 @@
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="footer__link-icon"
+              height="32"
+              width="32"
               viewBox="0 0 512 512"
             >
               <path
