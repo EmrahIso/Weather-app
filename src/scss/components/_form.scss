@@ -47,19 +47,10 @@
       color: var(--clr-neutral-500);
     }
 
-    & + span {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, -25%);
-      font-size: var(--fs-200);
-      color: #f43f5e;
-      display: flex;
-      justify-content: center;
-      transition: all 0.3s;
-      opacity: 0;
-      gap: toRem(6);
-      width: 100%;
+    &:not(:placeholder-shown):invalid {
+      border: 2px solid #f43f5e;
+      border-right-width: 3px;
+      background-color: var(--clr-rd-100);
     }
   }
 

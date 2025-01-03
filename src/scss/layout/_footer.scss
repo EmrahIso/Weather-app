@@ -1,8 +1,7 @@
 @use '../utilities/' as *;
 
 .footer {
-  margin-top: toRem(60);
-  margin-bottom: toRem(30);
+  margin: toRem(30);
 
   &__box {
     display: flex;
