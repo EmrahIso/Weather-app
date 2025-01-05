@@ -5,7 +5,7 @@ import { UIControl } from './UIControl';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('----------------------');
-  //localStorage.clear();
+  localStorage.clear();
   console.log('Cleared localStorage');
   console.log('----------------------');
 }
@@ -38,7 +38,7 @@ export function updateStorage() {
   localStorage.setItem('lastSearchedCity', lastSearchedCity);
 }
 
-function renderStorage() {
+async function renderStorage() {
   // Update visually currentUnit Value
   UIControl.updateCurrentUnit(localStorage.getItem('currentUnit'));
 
@@ -46,10 +46,12 @@ function renderStorage() {
   UIControl.updateLastSearchedCity(localStorage.getItem('lastSearchedCity'));
 
   // Send initial api request
-  getAPIResponse(
+  const obj = await UIControl.updateWeatherInfo(
     localStorage.getItem('lastSearchedCity'),
     localStorage.getItem('currentUnit'),
   );
+
+  UIControl.formValidValidationFunction(obj);
 }
 
 /////////////////////////////////////////////////
@@ -57,7 +59,7 @@ function renderStorage() {
 ////////////////////////////////////////////////
 
 if (localStorage.length === 0) {
-  localStorage.setItem('currentUnit', 'us');
+  localStorage.setItem('currentUnit', 'metric');
   localStorage.setItem('lastSearchedCity', 'London');
 
   renderStorage();

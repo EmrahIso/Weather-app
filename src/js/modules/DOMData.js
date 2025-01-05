@@ -1,4 +1,3 @@
-import { getAPIResponse } from '../modules/fetchWeatherData';
 import { UIControl } from './UIControl';
 
 const DOMData = (function () {
@@ -23,7 +22,20 @@ const DOMData = (function () {
     if (!cityInputEl.validity.valid) {
       UIControl.formInvalidValidationFunction(cityInputEl);
     } else {
-      UIControl.updateLastSearchedCity(cityInputEl.value);
+      // Remove whitespaces
+      const searchedCity = cityInputEl.value
+        .split('')
+        .filter((char) => char !== ' ')
+        .join('');
+
+      UIControl.updateLastSearchedCity(searchedCity);
+
+      const obj = await UIControl.updateWeatherInfo(
+        searchedCity,
+        localStorage.getItem('currentUnit'),
+      );
+
+      UIControl.formValidValidationFunction(obj);
     }
   };
 
@@ -33,20 +45,24 @@ const DOMData = (function () {
 
     if (inputEl.validity.valid) {
       // Validation message
+      const errorEl = inputEl.nextElementSibling;
+
+      errorEl.style.transform = 'translate(-50%, -50%)';
+      errorEl.style.opacity = '0';
     } else {
       UIControl.formInvalidValidationFunction(inputEl);
     }
   };
 
   const unitRadioGroupInputEventHandler = async (e) => {
-    const cityName = document.querySelector(
-      '[data-info="address"]',
-    ).textContent;
     const unitGroup = e.target.value;
 
     UIControl.updateCurrentUnit(e.target.value);
 
-    const obj = UIControl.updateWeatherInfo(cityName, unitGroup);
+    const obj = await UIControl.updateWeatherInfo(
+      localStorage.getItem('lastSearchedCity'),
+      unitGroup,
+    );
 
     UIControl.formValidValidationFunction(obj);
   };

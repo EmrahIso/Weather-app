@@ -5,11 +5,13 @@ const UIControl = (function () {
 
   const errorDialogEl = document.querySelector('[data-weather-error-dialog]');
 
+  const iconImageEl = document.querySelector('[data-info="icon-image"]');
+
   const formInvalidValidationFunction = (el) => {
-    //const inputEl = el;
-    //const errorEl = inputEl.nextElementSibling;
-    //const errorContentEl = errorEl.querySelector('p');
-    /*
+    const inputEl = el;
+    const errorEl = inputEl.nextElementSibling;
+    const errorContentEl = errorEl.querySelector('p');
+
     if (inputEl.validity.valueMissing) {
       errorContentEl.textContent = 'You must enter an City Name';
     } else if (inputEl.validity.tooShort) {
@@ -17,13 +19,15 @@ const UIControl = (function () {
     } else if (inputEl.validity.tooLong) {
       errorContentEl.textContent = `City name should be maximum ${inputEl.maxLength} characters; you entered ${inputEl.value.length}`;
     }
-*/
-    //errorEl.style.transform = 'translate(-50%, 75%)';
-    //errorEl.style.opacity = '1';
+
+    errorEl.style.transform = 'translate(-50%, 75%)';
+    errorEl.style.opacity = '1';
   };
 
   const formValidValidationFunction = (obj) => {
     cityInputEl.value = '';
+
+    if (obj === undefined) return;
 
     for (let key in obj) {
       const allDataEls = document.querySelectorAll('[data-info]');
@@ -45,9 +49,24 @@ const UIControl = (function () {
         }
       });
     }
+
+    // To show weather icon
+    iconImageSearchFunction(obj.icon);
   };
 
-  const updateCurrentUnit = async (newValue) => {
+  const iconImageSearchFunction = (icon) => {
+    const allIconImageEls = document.querySelectorAll(
+      '[data-info="icon-image"]',
+    );
+    allIconImageEls.forEach((el) => (el.style.display = 'none'));
+
+    const iconImageEl = document.querySelector(
+      `[data-info="icon-image"]#${icon}`,
+    );
+    iconImageEl.style.display = 'block';
+  };
+
+  const updateCurrentUnit = (newValue) => {
     if (newValue === 'metric') {
       document.querySelector('[value="us"]').removeAttribute('checked');
 
@@ -59,21 +78,10 @@ const UIControl = (function () {
     }
 
     localStorage.setItem('currentUnit', newValue);
-
-    const obj = await getAPIResponse(
-      localStorage.getItem('lastSearchedCity'),
-      newValue,
-    );
-    formValidValidationFunction(obj);
   };
 
-  const updateLastSearchedCity = async (newValue) => {
+  const updateLastSearchedCity = (newValue) => {
     localStorage.setItem('lastSearchedCity', newValue);
-    const obj = await getAPIResponse(
-      newValue,
-      localStorage.getItem('currentUnit'),
-    );
-    formValidValidationFunction(obj);
   };
 
   const updateWeatherInfo = async (cityName, unitGroup) => {
