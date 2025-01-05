@@ -42,11 +42,11 @@ section {
 
   &--sunrise,
   &--uvindex {
-    fill: #fba087;
+    fill: var(--clr-org-400);
   }
 
   &--sunset,
   &--humidity {
-    fill: #1a6d8c;
+    fill: var(--clr-cyn-500);
   }
 }

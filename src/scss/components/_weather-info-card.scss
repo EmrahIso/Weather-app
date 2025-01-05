@@ -13,7 +13,8 @@
   &__image {
     height: toRem(160);
     width: toRem(160);
-    //filter: drop-shadow(0rem 0rem 7rem rgb(0, 0, 0, 0.6));
+
+    display: none;
 
     &-box {
       display: flex;
