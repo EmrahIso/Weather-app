@@ -16,7 +16,7 @@
     color: var(--clr-neutral-600);
     margin-bottom: toRem(12);
     font-size: var(--fs-300);
-    font-family: var(--font-regular);
+    font-family: var(--font-regular), sans-serif;
     line-height: 1.2;
     text-align: center;
     padding-top: toRem(3);
@@ -32,14 +32,14 @@
 
     & h3 {
       font-weight: 700;
-      color: var(--clr-neutral-300);
+      color: var(--clr-neutral-200);
       font-size: var(--fs-400);
       margin-bottom: toRem(8);
       line-height: 1.2;
     }
 
     & p {
-      color: var(--clr-neutral-300);
+      color: var(--clr-neutral-200);
       font-size: var(--fs-200);
     }
   }

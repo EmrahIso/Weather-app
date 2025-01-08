@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="clearWeather is a weather app that provides instant weather updates and daily forecasts. The app delivers real-time weather conditions and accurate daily predictions to help users plan their day with ease."
+    />
     <title>Web App</title>
   </head>
   <body>
@@ -20,6 +24,7 @@
               rel="noopener noreferrer"
               target="_blank"
               class="navigation__link"
+              aria-label="Read more about developer that coded the app"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,12 +62,15 @@
               type="submit"
               class="form__button"
               id="submitBtn"
+              aria-label="Submit Button"
               data-weather-btn
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="form__icon"
                 viewBox="0 0 512 512"
+                height="24"
+                width="24"
               >
                 <path
                   d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
@@ -133,6 +141,9 @@
                 id="cloudy"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
+                style="display: block"
               />
               <img
                 src="../assets/images/snow.svg"
@@ -140,6 +151,8 @@
                 id="snow"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
               <img
                 src="../assets/images/rain.svg"
@@ -147,6 +160,8 @@
                 id="rain"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
               <img
                 src="../assets/images/clear-day.svg"
@@ -154,6 +169,8 @@
                 id="clear-day"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
               <img
                 src="../assets/images/cloudy.svg"
@@ -168,6 +185,8 @@
                 id="fog"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
               <img
                 src="../assets/images/partly-cloudy-day.svg"
@@ -175,6 +194,8 @@
                 id="partly-cloudy-day"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
               <img
                 src="../assets/images/partly-cloudy-night.svg"
@@ -182,19 +203,21 @@
                 id="partly-cloudy-night"
                 alt="Weather image"
                 data-info="icon-image"
+                height="160"
+                width="160"
               />
             </div>
             <div
               class="article-weather-information__box-cont article-weather-information__box-cont--tt"
             >
-              <h4 class="article-weather-information__details-heading">
+              <h3 class="article-weather-information__details-heading">
                 Temperature:
-              </h4>
+              </h3>
               <div class="templerature__box">
                 <div>
-                  <span class="temperature" data-info="temp"></span>
-                  <span>&deg;</span>
-                  <span data-info="unit"></span>
+                  <span class="temperature" data-info="temp">3</span>
+                  <span>°</span>
+                  <span data-info="unit">C</span>
                 </div>
               </div>
               <div class="temperature__box">
@@ -204,6 +227,8 @@
                       xmlns="http://www.w3.org/2000/svg"
                       class="temperature-icon"
                       viewBox="0 0 512 512"
+                      height="12"
+                      width="12"
                     >
                       <path
                         fill="none"
@@ -212,13 +237,13 @@
                         stroke-linejoin="round"
                         stroke-width="48"
                         d="M112 268l144 144 144-144M256 392V100"
-                      />
+                      ></path>
                     </svg>
                     Min:
                   </span>
-                  <span data-info="temp-min"></span>
-                  <span>&deg;</span>
-                  <span data-info="unit"></span>
+                  <span data-info="temp-min">0.9</span>
+                  <span>°</span>
+                  <span data-info="unit">C</span>
                 </div>
                 <div>
                   <span>
@@ -226,6 +251,8 @@
                       xmlns="http://www.w3.org/2000/svg"
                       class="temperature-icon"
                       viewBox="0 0 512 512"
+                      height="12"
+                      width="12"
                     >
                       <path
                         fill="none"
@@ -234,33 +261,32 @@
                         stroke-linejoin="round"
                         stroke-width="48"
                         d="M112 244l144-144 144 144M256 120v292"
-                      />
+                      ></path>
                     </svg>
                     Max:
                   </span>
-                  <span data-info="temp-max"></span>
-                  <span>&deg;</span>
-                  <span data-info="unit"></span>
+                  <span data-info="temp-max">5.6</span>
+                  <span>°</span>
+                  <span data-info="unit">C</span>
                 </div>
               </div>
             </div>
             <div
               class="article-weather-information__box-cont article-weather-information__box-cont--tt"
             >
-              <h4 class="article-weather-information__details-heading">
+              <h3 class="article-weather-information__details-heading">
                 Timezone:
-              </h4>
+              </h3>
               <div>
-                <h5 data-info="timezone"></h5>
+                <h4
+                  class="article-weather-information__timezone"
+                  data-info="timezone"
+                >
+                  Europe/London
+                </h4>
               </div>
               <div>
-                <p data-info="datetime">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </p>
+                <p data-info="datetime">2025-01-07</p>
               </div>
             </div>
             <div class="article-weather-information__box-cont">
@@ -270,17 +296,19 @@
                     xmlns="http://www.w3.org/2000/svg"
                     class="weather-icon weather-icon--sunrise"
                     viewBox="0 0 512 512"
+                    height="32"
+                    width="32"
                   >
                     <path
                       d="M256 118a22 22 0 01-22-22V48a22 22 0 0144 0v48a22 22 0 01-22 22zM256 486a22 22 0 01-22-22v-48a22 22 0 0144 0v48a22 22 0 01-22 22zM369.14 164.86a22 22 0 01-15.56-37.55l33.94-33.94a22 22 0 0131.11 31.11l-33.94 33.94a21.93 21.93 0 01-15.55 6.44zM108.92 425.08a22 22 0 01-15.55-37.56l33.94-33.94a22 22 0 1131.11 31.11l-33.94 33.94a21.94 21.94 0 01-15.56 6.45zM464 278h-48a22 22 0 010-44h48a22 22 0 010 44zM96 278H48a22 22 0 010-44h48a22 22 0 010 44zM403.08 425.08a21.94 21.94 0 01-15.56-6.45l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.55 37.56zM142.86 164.86a21.89 21.89 0 01-15.55-6.44l-33.94-33.94a22 22 0 0131.11-31.11l33.94 33.94a22 22 0 01-15.56 37.55zM256 358a102 102 0 11102-102 102.12 102.12 0 01-102 102z"
-                    />
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h5 class="article-weather-information__subheading">
                     Sunrise
                   </h5>
-                  <span data-info="sunrise"></span>
+                  <span data-info="sunrise">08:04:35</span>
                 </div>
               </div>
               <div class="article-weather-information__box">
@@ -289,17 +317,19 @@
                     xmlns="http://www.w3.org/2000/svg"
                     class="weather-icon weather-icon--sunset"
                     viewBox="0 0 512 512"
+                    height="32"
+                    width="32"
                   >
                     <path
                       d="M264 480A232 232 0 0132 248c0-94 54-178.28 137.61-214.67a16 16 0 0121.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0121.06 21.06C442.28 426 358 480 264 480z"
-                    />
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h5 class="article-weather-information__subheading">
                     Sunset
                   </h5>
-                  <span data-info="sunset"></span>
+                  <span data-info="sunset">16:09:36</span>
                 </div>
               </div>
             </div>
@@ -310,17 +340,19 @@
                     xmlns="http://www.w3.org/2000/svg"
                     class="weather-icon weather-icon--humidity"
                     viewBox="0 0 512 512"
+                    height="32"
+                    width="32"
                   >
                     <path
                       d="M265.12 60.12a12 12 0 00-18.23 0C215.23 97.15 112 225.17 112 320c0 88.37 55.64 144 144 144s144-55.63 144-144c0-94.83-103.23-222.85-134.88-259.88zM272 412a12 12 0 01-11.34-16 11.89 11.89 0 0111.41-8A60.06 60.06 0 00332 328.07a11.89 11.89 0 018-11.41A12 12 0 01356 328a84.09 84.09 0 01-84 84z"
-                    />
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h5 class="article-weather-information__subheading">
                     Humidity
                   </h5>
-                  <span data-info="humidity"></span>
+                  <span data-info="humidity">83.2</span>
                 </div>
               </div>
               <div class="article-weather-information__box">
@@ -329,17 +361,19 @@
                     xmlns="http://www.w3.org/2000/svg"
                     class="weather-icon weather-icon--uvindex"
                     viewBox="0 0 512 512"
+                    height="32"
+                    width="32"
                   >
                     <path
                       d="M472.7 189.5c-13.26-8.43-29.83-14.56-48.08-17.93A16 16 0 01412 159.28c-7.86-34.51-24.6-64.13-49.15-86.58C334.15 46.45 296.21 32 256 32c-35.35 0-68 11.08-94.37 32a150.13 150.13 0 00-41.95 52.83A16.05 16.05 0 01108 125.8c-27.13 4.9-50.53 14.68-68.41 28.7C13.7 174.83 0 203.56 0 237.6 0 305 55.93 352 136 352h104V224.45c0-8.61 6.62-16 15.23-16.43A16 16 0 01272 224v128h124c72.64 0 116-34.24 116-91.6 0-30.05-13.59-54.57-39.3-70.9zM240 425.42l-36.7-36.64a16 16 0 00-22.6 22.65l64 63.89a16 16 0 0022.6 0l64-63.89a16 16 0 00-22.6-22.65L272 425.42V352h-32z"
-                    />
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h5 class="article-weather-information__subheading">
                     UV Index
                   </h5>
-                  <span data-info="uv-index"></span>
+                  <span data-info="uv-index">1</span>
                 </div>
               </div>
             </div>
@@ -347,12 +381,15 @@
           <article class="article-overview">
             <div>
               <div class="welcome-cont">
-                <h3 data-info="address"></h3>
-                <p data-info="description"></p>
+                <h3 data-info="address">London, England, United Kingdom</h3>
+                <p data-info="description">
+                  Similar temperatures continuing with a chance of rain Thursday
+                  &amp; a chance of snow tomorrow &amp; Friday.
+                </p>
               </div>
             </div>
             <div>
-              <fieldset class="details-cont" data-radio-group>
+              <fieldset class="details-cont" data-radio-group="">
                 <legend class="article-overview__heading">
                   Enter your details below
                 </legend>
@@ -364,9 +401,7 @@
                       value="us"
                       id="input-radio-fahrenheit"
                     />
-                    <label for="input-radio-fahrenheit"
-                      >Imperial ( &deg;F )</label
-                    >
+                    <label for="input-radio-fahrenheit">Imperial ( °F )</label>
                   </li>
                   <li class="details-list-item">
                     <input
@@ -375,7 +410,7 @@
                       value="metric"
                       id="input-radio-celsius"
                     />
-                    <label for="input-radio-celsius">Metric ( &deg;C )</label>
+                    <label for="input-radio-celsius">Metric ( °C )</label>
                   </li>
                 </ul>
               </fieldset>

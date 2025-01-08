@@ -5,7 +5,7 @@ import { UIControl } from './UIControl';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('----------------------');
-  localStorage.clear();
+  //localStorage.clear();
   console.log('Cleared localStorage');
   console.log('----------------------');
 }

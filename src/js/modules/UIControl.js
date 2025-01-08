@@ -20,7 +20,7 @@ const UIControl = (function () {
       errorContentEl.textContent = `City name should be maximum ${inputEl.maxLength} characters; you entered ${inputEl.value.length}`;
     }
 
-    errorEl.style.transform = 'translate(-50%, 75%)';
+    errorEl.style.transform = 'translate(-50%, 25%)';
     errorEl.style.opacity = '1';
   };
 

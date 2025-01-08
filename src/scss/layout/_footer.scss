@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     gap: toRem(6);
-    font-family: var(--font-bold);
+    font-family: var(--font-bold), sans-serif;
     transition: all 0.2s;
   }
 
