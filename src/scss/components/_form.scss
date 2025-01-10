@@ -6,6 +6,11 @@
   box-shadow: var(--shw-light-bottom);
   margin-top: toRem(150);
 
+  @include respond-to(extra-large) {
+    margin-top: toRem(70);
+    max-width: toRem(480);
+  }
+
   &__heading {
     text-transform: uppercase;
     color: var(--clr-neutral-300);
@@ -34,6 +39,10 @@
     border-top-left-radius: toRem(16);
     border-bottom-left-radius: toRem(16);
 
+    @include respond-to(medium) {
+      font-size: var(--fs-300);
+    }
+
     &:focus {
       border: 2px solid var(--clr-cyn-500);
       outline: 0;
@@ -46,6 +55,10 @@
       letter-spacing: -0.25px;
       letter-spacing: 0.25px;
       color: var(--clr-neutral-500);
+
+      @include respond-to(medium) {
+        font-size: var(--fs-200);
+      }
     }
 
     &:not(:placeholder-shown):invalid {
@@ -96,6 +109,10 @@
     & p {
       font-size: var(--fs-200);
       color: var(--clr-rd-400);
+
+      @include respond-to(medium) {
+        font-size: var(--fs-100);
+      }
     }
   }
 }

@@ -7,11 +7,22 @@
     display: flex;
     justify-content: center;
     gap: toRem(20);
+
+    @include respond-to(medium) {
+      gap: toRem(12);
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__box-item:not(:last-child) {
     padding-right: toRem(20);
     border-right: 1px solid var(--clr-neutral-400);
+
+    @include respond-to(medium) {
+      padding-right: 0;
+      border-right: 0;
+    }
   }
 
   &__box-item {
@@ -20,6 +31,10 @@
     align-items: center;
     gap: toRem(8);
     color: var(--clr-neutral-500);
+
+    @include respond-to(medium) {
+      font-size: var(--fs-100);
+    }
   }
 
   &__link:link,
@@ -31,6 +46,10 @@
     gap: toRem(6);
     font-family: var(--font-bold), sans-serif;
     transition: all 0.2s;
+
+    @include respond-to(medium) {
+      gap: toRem(4);
+    }
   }
 
   &__link-icon {

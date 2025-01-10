@@ -14,6 +14,14 @@
   transform: translate(-50%, -150%);
   opacity: 0;
 
+  @include respond-to(small) {
+    width: toRem(350);
+  }
+
+  @include respond-to(extra-small) {
+    width: toRem(280);
+  }
+
   &::backdrop {
     z-index: -1;
     background-color: transparent;
@@ -42,6 +50,10 @@
     font-size: var(--fs-300);
     color: var(--clr-neutral-600);
     line-height: 1.2;
+
+    @include respond-to(small) {
+      font-size: var(--fs-200);
+    }
   }
 
   &__close-btn {
@@ -91,5 +103,9 @@
     font-size: var(--fs-200);
     color: var(--clr-neutral-500);
     line-height: 1.15;
+
+    @include respond-to(small) {
+      font-size: var(--fs-100);
+    }
   }
 }
